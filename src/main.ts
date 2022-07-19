@@ -25,6 +25,10 @@ const editor = monaco.editor.create(app, {
 });
 
 editor.onDidChangeModelContent(() => {
-  const value = editor.getValue();
-  console.log(value);
+  const content = editor.getValue();
+  chrome.runtime.sendMessage({ type: "saveContent", content });
+});
+
+chrome.runtime.sendMessage({ type: "loadContent" }, ({ content }) => {
+  editor.setValue(content);
 });
