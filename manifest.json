@@ -2,5 +2,8 @@
   "name": "newtab-editor",
   "version": "0.0.1",
   "manifest_version": 3,
-  "description": "Editor in new tab"
+  "description": "Editor in new tab",
+  "chrome_url_overrides": {
+    "newtab": "index.html"
+  }
 }
